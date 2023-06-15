@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
                     <div class="col-sm-4">
-                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                        <button type="button" class="btn btn-info add-new" onclick="open_add_new_modal()"><i class="fa fa-plus"></i> Add New</button>
                     </div>
                 </div>
             </div>
@@ -25,3 +25,35 @@
         </div>
     </div>
 </div>  
+
+<!-- Đây là phần hiển thị modal -->
+<div class="m-4">
+    <div id="myModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="myModalTitle" class="modal-title">Add new Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="close_modal()">x</button>
+                </div>
+
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="id" required>
+
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+                    <label for="department"><b>Department</b></label>
+                    <input type="text" placeholder="Enter Department" name="department" id="department" required>
+
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Enter Phone" name="phone" id="phone" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="close_modal()">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
